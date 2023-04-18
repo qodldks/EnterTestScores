@@ -3,6 +3,15 @@ package com.choi.bssm.hellospring.controller;
 public class StudentForm {
     private Long id;
     private String name;
+    private int score;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     public Long getId() {
         return id;
@@ -19,4 +28,6 @@ public class StudentForm {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

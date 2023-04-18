@@ -35,4 +35,15 @@ public class StudentService {
     public List<Student> findStudents() {
         return repository.findAll();
     }
+
+    public Student findOne(Long id) {
+        return repository.findById(id);
+    }
+
+    public Long updateScore(Student student) {
+        Student updateStudent = repository.findById(student.getId());
+        updateStudent.setScore(student.getScore());
+
+        return updateStudent.getId();
+    }
 }
