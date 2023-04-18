@@ -5,6 +5,8 @@ import com.choi.bssm.hellospring.repository.MemoryStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     private final MemoryStudentRepository repository;
@@ -28,5 +30,9 @@ public class StudentService {
         if(repository.findById(student.getId()) != null){
             throw new IllegalStateException("이미 등록된 학생입니다.");
         }
+    }
+
+    public List<Student> findStudents() {
+        return repository.findAll();
     }
 }

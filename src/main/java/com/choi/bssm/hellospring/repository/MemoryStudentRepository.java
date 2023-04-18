@@ -18,4 +18,9 @@ public class MemoryStudentRepository {
     public Student findById(Long id){
         return store.get(id);
     }
+
+    public List<Student> findAll(){
+        List<Student> list = new ArrayList<>(store.values());
+        return  list;
+    }
 }
